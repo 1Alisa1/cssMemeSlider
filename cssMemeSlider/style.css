@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: auto 1em auto;
+  width: fit-content;
+  margin: 5em auto;
+}
+
+.wrapper > input {
+  display: none;
+}
+
+.slider {
+  overflow: hidden;
+}
+
+.slider-images {
+  max-width: 36em;
+  grid-column: 1 / 3;
+}
+
+.slider-texts {
+  grid-row: 3;
+}
+
+.slides-container {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.controls-container {
+  display: flex;
+  justify-content: end;
+  gap: 0.3em;
+  grid-row: 3;
+}
+
+.controls-container .control {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.5em;
+	width: 1.5em;
+	cursor: pointer;
+}
+
+.controls-container .control .control-core {
+	height: 1em;
+	width: 1em;
+  background: #969696;
+	border: .2em solid #969696;
+	border-radius: 50%;
+}
+
+.controls-container .control:hover .control-core {
+	border: .2em solid #c8c8c8 !important;
+  background-color: #c8c8c8;
+}
+
+#slide1:checked ~ .controls-container .control[for="slide1"] .control-core,
+#slide2:checked ~ .controls-container .control[for="slide2"] .control-core,
+#slide3:checked ~ .controls-container .control[for="slide3"] .control-core,
+#slide4:checked ~ .controls-container .control[for="slide4"] .control-core {
+  border: .2em solid #969696;
+  background-color: #ffffff;
+}
+
+#slide1:checked ~ .slider .slides-container {
+  transform: translateX(0%);
+}
+
+#slide2:checked ~ .slider .slides-container {
+  transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slider .slides-container {
+  transform: translateX(-200%);
+}
+
+#slide4:checked ~ .slider .slides-container {
+  transform: translateX(-300%);
+}
+
+.slide {
+  min-width: 100%;
+  height: auto;
+  flex: 1 0;
+}
+
+.text {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+@media (min-width: 320px) and (max-width: 1023px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 1em;
+    padding: 0 3%;
+  }
+
+  .slider-images {
+    grid-column: 1;
+    grid-row: 1;
+    max-width: 36em;
+  }
+
+  .controls-container {
+    grid-row: 2;
+    justify-content: center;
+  }
+}
