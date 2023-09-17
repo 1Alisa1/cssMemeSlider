@@ -5,10 +5,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Slider</title>
+  <link rel="stylesheet" href="https://unpkg.com/normalize.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-
+  <div class="wrapper">
+    <input type="radio" name="point" id="slide1" checked>
+    <input type="radio" name="point" id="slide2">
+    <input type="radio" name="point" id="slide3">
+    <input type="radio" name="point" id="slide4">
+    <div class="slider slider-images">
+      <div class="slides-container">
+        <img class="slide slide1" src="../cssMemeSlider/img/slide1.png" />
+        <img class="slide slide2" src="../cssMemeSlider/img/slide2.png" />
+        <img class="slide slide3" src="../cssMemeSlider/img/slide3.png" />
+        <img class="slide slide4" src="../cssMemeSlider/img/slide4.png" />
+      </div>
+    </div>
+    <div class="slider slider-texts">
+      <div class="slides-container">
+        <span class="slide text slide1">1111</span>
+        <span class="slide text slide2">22222</span>
+        <span class="slide text slide3">33333</span>
+        <span class="slide text slide4">4444</span>
+      </div>
+    </div>
+    <div class="controls-container">
+      <label class="control" for="slide1">
+        <div class="control-core"></div>
+      </label>
+      <label class="control" for="slide2">
+        <div class="control-core"></div>
+      </label>
+      <label class="control" for="slide3">
+        <div class="control-core"></div>
+      </label>
+      <label class="control" for="slide4">
+        <div class="control-core"></div>
+      </label>
+    </div>
+  </div>
 </body>
 
 </html>
